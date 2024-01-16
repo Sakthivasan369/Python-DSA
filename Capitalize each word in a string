@@ -1,0 +1,12 @@
+def capitalize_each_word(input_string):
+    capitalized_string=input_string.title()
+    return capitalized_string
+input_string=input("Enter The string: ")
+result=capitalize_each_word(input_string)
+print("Original String:",input_string)
+print("Capitalized String:",result)
+_____________________________________________________________________________________________________
+Output
+Enter The string: national aeronautics space administration
+Original String: national aeronautics space administration   
+Capitalized String: National Aeronautics Space Administration
