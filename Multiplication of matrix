@@ -1,0 +1,59 @@
+r=int(input("Enter the number of rows:"))
+c=int(input("Enter the number of columns:"))
+m=[]
+for i in range(r):
+    l=[]
+    for i in range(c):
+       v=int(input()) 
+       l.append(v)
+    m.append(l)
+print("The matrix is given by :")
+for i in range(r):
+    for j in range(c):
+        print(m[i][j],end =" ")
+    print()
+trans=[[0,0,0],[0,0,0],[0,0,0]]
+for i in range(r):
+    for j in range(c):
+        trans[j][i]=m[i][j]
+print("The transpose of the given matrix is :")
+for i in range(r):
+    for j in range(c):
+        print(trans[i][j],end=" ")
+    print()
+mul_res=[[0,0,0],[0,0,0],[0,0,0]]
+print("---------------------------------------------")
+for i in range(len(m)):
+    for j in range(len(m[0])):
+        for k in range(len(trans)):
+            mul_res[i][j]+=m[i][k]*trans[k][j]
+print("The multiplication of the matrix and its transpose is given by ")
+for row in range(r):
+    for col in range(c):
+        print(mul_res[row][col],end=" ")
+    print()
+-------------------------------------------------------------------------------------------------
+Output:
+nter the number of columns:3
+0
+1
+1
+1
+0
+1
+1
+1
+0
+The matrix is given by :
+0 1 1 
+1 0 1 
+1 1 0 
+The transpose of the given matrix is :
+0 1 1 
+1 0 1 
+1 1 0 
+---------------------------------------------
+The multiplication of the matrix and its transpose is given by 
+2 1 1 
+1 2 1 
+1 1 2 
