@@ -1,0 +1,16 @@
+num=float(input("Enter the rupee:"))
+#1rupee=100 paise 
+split_num=str(num).split(".")
+c=split_num[0]
+#comverting rupee to paise and printing
+paise=(int(c)*100)+int(split_num[1])
+print(f"Rupee {num} in paise {paise}")
+--------------------------------------------------------------------------------------------
+Output 1
+Enter the rupee:9.98
+Rupee 9.98 in paise 998
+Output 2
+Enter the rupee:0.05
+Rupee 0.05 in paise 5
+
+
