@@ -1,0 +1,74 @@
+IMPLEMENTATATION OF QUEUE ADT USING LIST 
+CODE:
+class Queue:
+    def __init__(self):
+        self.queue=[]
+    def enqueue(self,item):
+        self.queue.append(item)
+        print("Enqueued Item:",item)
+    def dequeue(self):
+        if not self.is_empty():
+            dequeued_item=self.queue.pop(0)
+            print("Dequeued Item:",dequeued_item)
+            return dequeued_item
+        else:
+            print("Queue Underflow" )
+            return None
+    def traversal(self):
+        print("Queue Elements :")
+        for item in self.queue:
+            print(item,end=" ")
+        print()
+    def is_empty(self):
+        if len(self.queue)==0:
+            return True
+if __name__=="__main__":
+    q=Queue()
+    print("*********************QUEUE********************")
+    print("\n1.Enqueue\n2.Dequeue\n3.Traversal\n4.Quit")
+    while True:
+        choice=(input("Enter your choice:"))
+        if choice=="1":
+            data=input("Enter data to enqueue:")
+            q.enqueue(data)
+        elif choice=="2":
+            q.dequeue()
+        elif choice=="3":
+            q.traversal()
+        elif choice=="4":
+            print("Exiting The Program")
+        else:
+            print("Invalid Choice! Please Try Again.")
+_______________________________________________________________________________
+OUTPUT
+*********************QUEUE********************
+
+1.Enqueue
+2.Dequeue
+3.Traversal       
+4.Quit
+Enter your choice:1
+Enter data to enqueue:20
+Enqueued Item: 20 
+Enter your choice:1
+Enter data to enqueue:30
+Enqueued Item: 30 
+Enter your choice:1
+Enter data to enqueue:40
+Enqueued Item: 40 
+Enter your choice:3
+Queue Elements :  
+20 30 40 
+Enter your choice:2
+Dequeued Item: 20
+Enter your choice:2
+Dequeued Item: 30
+Enter your choice:2
+Dequeued Item: 40
+Enter your choice:2
+Queue Underflow
+Enter your choice:3
+Queue Elements :
+Queue is Empty
+Enter your choice:4
+Exiting The Program
