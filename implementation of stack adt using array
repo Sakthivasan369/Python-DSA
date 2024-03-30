@@ -42,3 +42,31 @@ if __name__=="__main__":
             break
         else:
             print("INVALID CHOICE.PLEASE TRY AGAIN!")
+_________________________________________________________________________________________________________
+OUTPUT:
+********************STACK*******************
+
+1.PUSH
+2.POP
+3.PEEK
+4.QUIT
+Enter your choice:1
+ENTER THE DATA TO PUSH:20
+Pushed item 20    
+Enter your choice:1
+ENTER THE DATA TO PUSH:30
+Pushed item 30    
+Enter your choice:3
+Top item of the stack: 30
+Enter your choice:2      
+Popped_item: 30   
+Enter your choice:3
+Top item of the stack: 20
+Enter your choice:2      
+Popped_item: 20
+Enter your choice:2
+Stack Underflow
+Enter your choice:3
+Stack is empty
+Enter your choice:4
+EXITING THE PROGRAM
