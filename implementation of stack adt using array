@@ -1,0 +1,44 @@
+IMPLEMENTATION OF STACK ADT USING ARRAY
+CODE:
+class Stack:
+    def __init__(self):
+        self.items=[]
+    def push(self,item):
+        self.items.append(item)
+        print("Pushed item",item)
+    def pop(self):
+        if not self.is_empty():
+            popped_item=self.items.pop()
+            print("Popped_item:",popped_item)
+            return popped_item
+        else:
+            print("Stack Underflow")
+            return None
+    def peek(self):
+        if not self.is_empty():
+            print("Top item of the stack:",self.items[-1])
+            return self.items[-1]
+        else:
+            print("Stack is empty")
+            return None
+    def is_empty(self):
+        return len(self.items)==0
+if __name__=="__main__":
+    s=Stack()
+    print("********************STACK*******************")
+    print("\n1.PUSH\n2.POP\n3.PEEK\n4.QUIT")
+    while True:
+        
+        choice=(input("Enter your choice:"))
+        if choice=="1":
+            data=int(input("ENTER THE DATA TO PUSH:"))
+            s.push(data)
+        elif choice=='2':
+            s.pop()
+        elif choice=='3':
+            s.peek()
+        elif choice=="4":
+            print("EXITING THE PROGRAM")
+            break
+        else:
+            print("INVALID CHOICE.PLEASE TRY AGAIN!")
