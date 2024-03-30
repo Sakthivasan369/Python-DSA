@@ -16,9 +16,13 @@ class Queue:
             return None
     def traversal(self):
         print("Queue Elements :")
-        for item in self.queue:
-            print(item,end=" ")
-        print()
+        if not self.is_empty():
+           for item in self.queue:
+              print(item,end=" ")
+           print()
+        else:
+           print("Queue is Empty")
+           return None
     def is_empty(self):
         if len(self.queue)==0:
             return True
@@ -37,6 +41,7 @@ if __name__=="__main__":
             q.traversal()
         elif choice=="4":
             print("Exiting The Program")
+            break
         else:
             print("Invalid Choice! Please Try Again.")
 _______________________________________________________________________________
