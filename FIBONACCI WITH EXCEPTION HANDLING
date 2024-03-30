@@ -1,0 +1,39 @@
+def fibonacci(n):
+  """
+  Calculates the nth Fibonacci number using recursion.
+
+  Args:
+    n: The index of the Fibonacci number to calculate.
+
+  Returns:
+    The nth Fibonacci number.
+  """
+  
+
+  if n <= 1:
+    return n
+  else:
+    return fibonacci(n-1) + fibonacci(n-2)
+
+# Get user input with error handling
+while True:
+  try:
+    n = int(input("Enter a non-negative integer for the Fibonacci series: "))
+    if n >= 0:
+      break
+    else:
+      print("Invalid input. Please enter a non-negative integer.")
+  except ValueError:
+    print("Invalid Input. Please enter a non-negative integer.")
+
+# Print the first n Fibonacci numbers
+for i in range(n):
+  print(fibonacci(i),end=" ")
+----------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+Enter a non-negative integer for the Fibonacci series: a
+Invalid Input. Please enter a non-negative integer.    
+Enter a non-negative integer for the Fibonacci series: -1
+Invalid input. Please enter a non-negative integer.    
+Enter a non-negative integer for the Fibonacci series: 10
+0 1 1 2 3 5 8 13 21 34 
