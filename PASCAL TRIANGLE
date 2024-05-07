@@ -1,0 +1,43 @@
+TO PRINT THE PASCAL TRIANGLE
+res=[[1]]
+numRows=int(input("Enter the no. of rows"))
+for i in range(numRows-1):
+    temp=[0]+res[-1]+[0]
+    row=[]
+    for j in range(len(res[-1])+1):
+        row.append(temp[j]+temp[j+1])
+    res.append(row)
+_______________________________________________________________
+OUTPUT
+Enter the no. of rows5
+[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+_______________________________________________________________
+TO PRINT THE NTH ROW OF A PASCAL TRIANGLE
+def generate_pascal_row(n):
+    row = [1]
+    for k in range(1, n):
+        row.append(row[k - 1] * (n - k) // k)
+      # Add the last element manually
+    return row
+x=generate_pascal_row(6)
+print(x)
+_________________________________________________________________
+OUTPUT
+[1, 5, 10, 10, 5, 1]
+_________________________________________________________________
+TO PRINT THE SPECIFIC VALUE : GIVE ROW AND COLUMN VALUE
+def print_specific_value(r,c):
+    if r==c or c==0:
+        return 1
+    if c>r or c<0 :
+        return 0
+    res=1
+    for k in range(c):
+        res*=(r-k)
+        res//=(k+1)
+    return res
+y=print_specific_value(4,2)
+print(y)
+____________________________________________________________________
+OUTPUT
+6
