@@ -1,0 +1,34 @@
+class Solution {
+public:
+    const int dx[4]={-1,1,0,0};
+    const int dy[4]={0,0,1,-1};
+    int minimumEffortPath(vector<vector<int>>& h) {
+        int r=h.size(),c=h[0].size();
+        vector<vector<int>> dist(r,vector<int>(c,INT_MAX));
+        set<tuple<int,int,int>> q;
+        q.insert({0,0,0});
+        dist[0][0]=0;
+        while(!q.empty()){
+            auto[cureff,x,y]=*q.begin();
+            q.erase(*q.begin());
+            for(int i=0;i<4;i++){
+                int X=x+dx[i],Y=y+dy[i];
+                if(X>=0 && Y>=0 && X<r && Y<c ){
+                    int neff=max(cureff,abs(h[x][y]-h[X][Y]));
+                    if(neff<dist[X][Y]){
+                    q.erase({dist[X][Y],X,Y});
+                    dist[X][Y]=neff;
+                    q.insert({dist[X][Y],X,Y});}
+                }
+            }
+
+        }
+        return dist[r-1][c-1];
+    }
+};
+static const int kds = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 0;
+}();
